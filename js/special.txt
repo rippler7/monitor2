@@ -1,0 +1,220 @@
+function createSkeletons(){
+	var walkUpSkeleton = {
+			key:'walkUpSkeleton',
+			frames: game.anims.generateFrameNumbers('skeleton',{start:104,end:112}),
+			frameRate:maxFrameRate,
+			repeat:-1
+		};
+		var walkDownSkeleton = {
+			key:'walkDownSkeleton',
+			frames: game.anims.generateFrameNumbers('skeleton',{start:130,end:137}),
+			frameRate:maxFrameRate,
+			repeat:-1
+		};
+		var walkLeftSkeleton = {
+			key:'walkLeftSkeleton',
+			frames: game.anims.generateFrameNumbers('skeleton',{start:117,end:125}),
+			frameRate:maxFrameRate,
+			repeat:-1
+		};
+		var walkRightSkeleton = {
+			key:'walkRightSkeleton',
+			frames: game.anims.generateFrameNumbers('skeleton',{start:143,end:151}),
+			frameRate:maxFrameRate,
+			repeat:-1
+		};
+		var shootUSkeletonp = {
+			key:'shootUpSkeleton',
+			frames: game.anims.generateFrameNumbers('skeleton',{start:208,end:220}),
+			frameRate:maxFrameRate,
+			repeat:false
+		};
+		var shootLeftSkeleton = {
+			key:'shootLeftSkeleton',
+			frames: game.anims.generateFrameNumbers('skeleton',{start:221,end:233}),
+			frameRate:maxFrameRate,
+			repeat:false
+		};
+		var playerDieSkeleton = {
+			key:"playerDieSkeleton",
+			frames: game.anims.generateFrameNumbers('skeleton',{start:260,end:265}),
+			repeat:false
+		}
+		
+		game.anims.create(walkUpSkeleton);
+		game.anims.create(walkDownSkeleton);
+		game.anims.create(walkLeftSkeleton);
+		game.anims.create(walkRightSkeleton);
+		game.anims.create(playerDieSkeleton);
+		game.anims.create(shootLeftSkeleton);
+		var playerPosX = this.game.scene.scenes[0].player.x;
+		var playerPosY = this.game.scene.scenes[0].player.y;
+		console.log(playerPosX,playerPosY);
+		for(var i=0;i<2;i++){
+			var x = Phaser.Math.Between(100,1500);
+			var y = Phaser.Math.Between(100,650);
+			
+			var sk = this.game.scene.scenes[0].physics.add.sprite(x,y,'skeleton',26);
+			console.log(sk);
+			this.game.scene.scenes[0].physics.add.colliders = [sk];
+			sk.body.collideWorldBounds = true; 
+			sk.body.setBounce(1);
+			sk.body.setVelocity(Phaser.Math.Between(10,15),Phaser.Math.Between(8,15));
+			if(Math.random() > 0.5){
+				sk.body.x += -1;
+			} else {
+				sk.body.y += -1;
+			}
+		}
+}
+
+
+
+
+class Skeleton extends Phaser.GameObjects.Sprite{
+	constructor(scene){
+		super(scene, game.scene.scenes[0].player.x, game.scene.scenes[0].player.y,'skeleton');
+		this.collideWorldBounds = true;
+		console.log(this);
+		this.born = 0;
+		this.player =  game.scene.scenes[0].player;
+	}
+	create(){
+		this.setActive(true);
+		this.setVisible(true);
+		this.setVelocity(Phaser.Math.Between(-100,100),Phaser.Math.Between(-100,100));
+	}
+	update(time,delta){
+		this.x -= (this.x-this.player.x)*0.01;
+		this.y -= (this.y-this.player.y)*0.01;
+	}
+}
+
+
+
+var bgroup = this.physics.add.group({
+			key:'skeleton',
+			classType:Skeleton,
+	        bounceX: 1,
+	        bounceY: 1,
+	        collideWorldBounds: true,
+	        frame:272,
+	        runChildUpdate:true
+	    });
+		//let skel = this.skeletons.get();
+		for(var s=0;s<4;s++){
+			bgroup.create(Phaser.Math.Between(100,1000),100,'skeleton');
+			bgroup.create(Phaser.Math.Between(100,1000),600,'skeleton');
+			bgroup.create(100,Phaser.Math.Between(100,650),'skeleton');
+			bgroup.create(1000,Phaser.Math.Between(100,650),'skeleton');
+		}
+
+
+
+========================================================================
+
+
+var bgroup = this.physics.add.group({
+			key:'skeleton',
+			classType:Skeleton,
+	        bounceX: 1,
+	        bounceY: 1,
+	        frame:26,
+	        collideWorldBounds: true,
+	        frame:272,
+	        runChildUpdate:true
+	    });
+
+
+class Skeleton extends Phaser.GameObjects.Sprite{
+	constructor(scene){
+		super(scene,'skeleton');
+		this.collideWorldBounds = true;
+		console.log(this);
+		this.x = Phaser.Math.Between(100,1000);
+		this.y = Phaser.Math.Between(100,650);
+		this.born = 0;
+		this.player =  game.scene.scenes[0].player;
+	}
+	create(){
+		this.setActive(true);
+		this.setVisible(true);
+		this.setVelocity(Phaser.Math.Between(-100,100),Phaser.Math.Between(-100,100));
+		while(this.x <= player.x+100){
+			this.x = Phaser.Math.Between(100,1000);
+		}
+		while(this.y <= player.y+100){
+			this.y = Phaser.Math.Between(100,1000);
+		}
+	}
+	update(time,delta){
+		if(Math.abs(this.x - this.player.x)< 100 && Math.abs(this.y - this.player.y)< 100){
+			this.x -= (this.x-this.player.x)*0.05;
+			this.y -= (this.y-this.player.y)*0.05;
+		} else {
+			this.x += delta*Phaser.Math.Between(-10,10)*0.01;
+			this.y += delta*Phaser.Math.Between(-10,10)*0.01;
+		}
+		
+	}
+}
+
+====================================================
+
+var initPosX = Phaser.Math.Between(100,1000);
+		  	var initPosY = Phaser.Math.Between(100,650);
+		  	while(initPosX > (this.player.x-100) || initPosX > (this.player.x-100)){
+		  		initPosX = Phaser.Math.Between(100,1500);
+		  	}
+		  	while(initPosY > (this.player.y-100) || initPosY > (this.player.y-100)){
+		  		initPosY = Phaser.Math.Between(100,650);
+		  	}
+
+
+
+
+else {
+			this.x += delta*Phaser.Math.Between(-10,10)*0.01;
+			this.y += delta*Phaser.Math.Between(-10,10)*0.01;
+		}
+
+
+==================================================================
+
+
+class Skeleton extends Phaser.GameObjects.Sprite{
+	constructor(scene){
+		super(scene,Phaser.Math.Between(100,1000),Phaser.Math.Between(100,650),'skeleton');
+		this.collideWorldBounds = true;
+		console.log(this);
+		this.born = 0;
+		this.player =  game.scene.scenes[0].player;
+	}
+	create(){
+		this.setActive(true);
+		this.setVisible(true);
+		this.setVelocity(Phaser.Math.Between(-100,100),Phaser.Math.Between(-100,100));
+		this.oSpeedX =  Phaser.Math.Between(100,1000);
+		this.oSpeedY = Phaser.Math.Between(100,650);
+		while(this.oSpeedX <= this.player.x+100 || this.oSpeedX >= this.player.x-100){
+			this.oSpeedX = Phaser.Math.Between(100,1000);
+		}
+		while(this.oSpeedY <= this.player.y+100 || this.oSpeedY >= this.player.y-100){
+			this.oSpeedY = Phaser.Math.Between(100,650);
+		}
+		this.x = this.oSpeedX;
+		this.y = this.oSpeedY;
+		this.randSpeedX = Phaser.Math.Between(-20,20);
+		this.randSpeedY = Phaser.Math.Between(-20,20);
+	}
+	update(time,delta){
+		if(Math.abs(this.x - this.player.x)< 130 && Math.abs(this.y - this.player.y)< 130){
+			this.x -= (this.x-this.player.x)*(0.01);
+			this.y -= (this.y-this.player.y)*(0.01);
+		} else {
+			this.x += (this.randSpeedX*delta)*0.1;
+			this.y += (this.randSpeedY*delta)*0.1;
+		}
+		
+	}
+}
