@@ -11,5 +11,13 @@
     "url": "https://github.com/rippler7/monitor2.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "moment": "^2.22.2",
+    "moment-timezone": "^0.5.21",
+    "popper.js": "^1.14.3"
+  }
 }
