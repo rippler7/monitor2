@@ -2,17 +2,25 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" href="css/style.css" />
 	<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/jquery.tickerNews.js"></script>
 	<!--<script type="text/javascript" src="./js/liScroll.js"></script>-->
 	<script src="node_modules/moment/moment.js"></script>
 	<script src="node_modules/moment-timezone/builds/moment-timezone-with-data.js"></script>
+	<script type="text/javascript" src="scripts/data.js"></script>
+	<script type="text/javascript" src="scripts/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-	<div id="home_main">
-	This is home content.
+	<div id="mainDiv">
+		<ul id="slideList">
+			&nbsp;
+		</ul>
+	</div>
+	<div id="testDiv">
+		&nbsp;
 	</div>
 </body>
 </html>

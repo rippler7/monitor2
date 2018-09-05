@@ -1,74 +1,48 @@
-/* RESEt.CSS */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+@font-face{ 
+	font-family: 'ArvoRegular';
+	src: url('../fonts/arvo-regular-webfont.woff');
+	src: url('../fonts/arvo-regular-webfont.woff?#iefix') format('embedded-opentype'),
+	     url('../fonts/arvo-regular-webfont.woff') format('woff'),
+	     url('../fonts/arvo-regular-webfont.ttf') format('truetype');
 }
 
-html,body{
-	height: 100% !important;
+@font-face {
+    font-family: 'arvobold';
+    src: url('../fonts/arvo-bold-webfont.woff2') format('woff2'),
+         url('../fonts/arvo-bold-webfont.woff') format('woff'),
+         url('../fonts/arvo-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-/* END RESET.CSS */
 
 div#mainDiv{
 	display:block;
 	position:absolute;
-	width:100%;
-	height:100%;
+	padding:0px !important;
+	margin:0px !important;
+	width:100% !important;
+	height:inherit;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
 }
 
 ul#slideList{
-	width: 100%;
-	height:100%;
+	padding: 0;
+}
+ul#slideList li{
+	padding:0;
 }
 #slideItem{
 	display:none;
 	position: absolute;
-	width:100%;
-	height:100% !important;
 	top:0px;
 	bottom: 0px;
 	left:0px;
 	margin:0px;
+	padding:0px !important;
 	background-color:transparent;
 }
 
@@ -82,25 +56,76 @@ ul#slideList{
 	background:transparent url('../img/btn.png') center no-repeat;
 	cursor: pointer;
 }
+html,body{
+	height:100%;
+	margin:0px;
+	padding:0px;
+	font-family:'ArvoRegular';
+	background-color:#253B3A;
+	color:#F8C552;
+	font-size:4vh;
+}
+table {
+}
+
+.mainContent{
+	padding-bottom:56.25%;
+	overflow: hidden;
+	height:auto !important;
+}
+
+th{
+	color:#649D9F;
+}
+
+#announcements{
+	padding-bottom:56.25%;
+	overflow: hidden;
+}
+
+.jumbotron{
+	min-width:100%;
+	max-height:100%;
+	overflow: hidden;
+	position:absolute;
+	background-color:#B4BFBC;
+	color:#253B3A;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	padding: 0.5rem 0.5rem;
+}
+
+.assignedPRTitleBar,.assignedFBCTitleBar{
+	font-family:'arvobold';
+}
+
+.qNumber{
+	font-family:'arvobold';
+	color:#253B3A;
+}
 
 /* Fading animation */
-.fade {
+.fader {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 2s;
+  -webkit-animation-duration: 1s;
   animation-name: fade;
-  animation-duration: 2s;
+  animation-duration: 1s;
+}
+
+.highlightOrange{
+	color:#EF5D18;
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: 0} 
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: 0} 
   to {opacity: 1}
 }
-
 /* HOME PAGE */
 div#home_main{
 	width: 100%;
