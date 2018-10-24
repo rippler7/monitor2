@@ -36,7 +36,7 @@ var NAM_Programmatic = {
 };
 var Automotive = {
 	id:"Automotive",
-	members:["Lopez, Ryan -Boss","Mingo, Christian -Sexy Meng","Valdehueza, Joshry Jade -Josh","Villas, John Aldwin"],
+	members:["Lopez, Ryan -Boss","Valdehueza, Joshry Jade -Josh"],
 	totalHours:0,
 	totalHoursB:0,
 	totalNonBillable:0	

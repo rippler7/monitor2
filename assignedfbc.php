@@ -86,8 +86,8 @@ function callDataAssignedFBC(){
 	});
 }
 	var liveCount = setInterval(function(){
-		console.log("refreshing Assigned FBC data...");
+		//console.log("refreshing Assigned FBC data...");
     	callDataAssignedFBC();
-    },30000); 
+    },refreshTimer); 
 	callDataAssignedFBC();
 </script>

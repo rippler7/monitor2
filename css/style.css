@@ -27,6 +27,7 @@ div#mainDiv{
 	top:50%;
 	left:50%;
 	transform: translate(-50%,-50%);
+	overflow: scroll !important;
 }
 
 ul#slideList{
@@ -61,8 +62,8 @@ html,body{
 	margin:0px;
 	padding:0px;
 	font-family:'ArvoRegular';
-	background-color:#253B3A;
-	color:#F8C552;
+	background-color:#0B3470;
+	color:#FAF000;
 	font-size:4vh;
 }
 table {
@@ -75,12 +76,16 @@ table {
 }
 
 th{
-	color:#649D9F;
+	color:#00D1C6;
 }
 
 #announcements{
-	padding-bottom:56.25%;
-	overflow: hidden;
+	height:100%;
+	overflow: hidden !important;
+}
+
+#announcmentList{
+
 }
 
 .jumbotron{
@@ -89,7 +94,7 @@ th{
 	overflow: hidden;
 	position:absolute;
 	background-color:#B4BFBC;
-	color:#253B3A;
+	color:#0B3470;
 	top:50%;
 	left:50%;
 	transform: translate(-50%,-50%);
@@ -102,7 +107,7 @@ th{
 
 .qNumber{
 	font-family:'arvobold';
-	color:#253B3A;
+	color:#0B3470;
 }
 
 /* Fading animation */
@@ -113,8 +118,44 @@ th{
   animation-duration: 1s;
 }
 
-.highlightOrange{
+.highlightOrange,.tzone{
 	color:#EF5D18;
+	font-family: 'arvobold';
+}
+
+.greenThemeYellow{
+	color:#FAF000;
+}
+
+.sizmekYellow{
+	color:#faf000;
+}
+
+#carouselTimeDisplay{
+	width:60vw;
+	height:10%;
+	display:block;
+	position:absolute;
+	z-index:2;
+	bottom:0px;
+	right:0px;
+	background-color:rgba(0,0,0,0.5);
+	font-size:4vw;
+	padding:0px !important;
+}
+
+#carouselTimeDisplay div div img{
+	opacity:0;
+}
+
+.carousel-caption{
+	padding:0px !important;
+	width:100%;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	height:100%;
+	position:absolute;
 }
 
 @-webkit-keyframes fade {

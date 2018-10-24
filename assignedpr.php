@@ -29,11 +29,11 @@ function callDataAssignedPR(){
 			dataType:"script",
 			method:"GET",
 			success:function(){
-				console.log("https://sizmek.quickbase.com/db/bhv6kzfnc?options=csv&jsa=1&a=API_GenResultsTable&qid="+qidAssignedPR+"&apptoken="+apptoken);
+				//console.log("https://sizmek.quickbase.com/db/bhv6kzfnc?options=csv&jsa=1&a=API_GenResultsTable&qid="+qidAssignedPR+"&apptoken="+apptoken);
 					var anyOnPRCue = 0;
 					//ASSIGNED PR
 					var assignedPRTitleBar = '<h2 class="display-5">ASSIGNED PRs DUE TODAY</h2>';
-					console.log('Assigned PR: ');
+					//console.log('Assigned PR: ');
 					allAssignedPR = qdb_data;
 					var totalContent = "";
 					document.getElementById('AssPRtableContent').innerHTML = "";
@@ -46,13 +46,13 @@ function callDataAssignedPR(){
 					if(anyOnPRCue == 0){assignedPRTitleBar = '<h2 class="display-3">NO ASSIGNED PRs DUE TODAY</h2>';}
 					document.getElementById('assignedPRTitleBar').innerHTML = assignedPRTitleBar;
 					document.getElementById('AssPRtableContent').innerHTML += totalContent;
-					console.log("This is home.php.");
+					//console.log("This is home.php.");
 			}
 	});
 }
 	var liveCount = setInterval(function(){
-		console.log("refreshing Assigned PR data...");
+		//console.log("refreshing Assigned PR data...");
     	callDataAssignedPR();
-    },30000); 
+    },refreshTimer); 
 	callDataAssignedPR();
 </script>
