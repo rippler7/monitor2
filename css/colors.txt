@@ -1,0 +1,12 @@
+#F8C552 - light yellow
+#253B3A - dark green
+#649D9F - pale teal
+#EF5D18 - orange
+
+
+#003471 - dark sizmek blue
+#0b3470 - dark sizmek blue
+#00d1c6 - teal
+#faf000 - yellow
+
+

@@ -25,8 +25,8 @@ var delay = delayBase;  //in milliseconds between frames;
 var timer = "";
 var looped = true;
 
-var aTimeLimiter = 5000;
-var definedTime = [5000,5000,5000,5000,aTimeLimiter];
+var aTimeLimiter = 7000;
+var definedTime = [7000,7000,7000,7000,aTimeLimiter];
 var counterAnim = 0;
 
 var APAC = {
@@ -162,17 +162,16 @@ function callData(){
 		dataType:"script",
 		method:"GET",
 		success:function(){
-			console.log(counterAnim);
 			var totalNews = "";
-			aTimeLimiter = 5000;
+			aTimeLimiter = 0;
 			var items = qdb_data;
+			var counteri = 0;
 			items.forEach(function(i){
 				totalNews+="<li>"+i+"</li><br />";
-				aTimeLimiter+=5000;
+				counteri++;
 			});
+			aTimeLimiter = (10000*items.length)
 			definedTime[definedTime.length-1] = aTimeLimiter;
-			console.log(definedTime[definedTime.length-1]);
-			console.log(counterAnim);
 			document.getElementById("announcementList").innerHTML = totalNews;
 		}
 	});
@@ -308,7 +307,7 @@ function slideShow(items){
 			*/
 		}
 		//console.log(delay);
-		$('#mainDiv').animate({scrollTop: $('#mainDiv').prop("scrollHeight")},{duration:delay,complete:function(){
+		$('#mainDiv').animate({scrollTop: $('#mainDiv').prop("scrollHeight")},{duration:delay+(12000),complete:function(){
 				$('#mainDiv').scrollTop(0);
 			}});
 		timer = setTimeout(function(){

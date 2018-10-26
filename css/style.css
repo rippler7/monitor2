@@ -62,7 +62,7 @@ html,body{
 	margin:0px;
 	padding:0px;
 	font-family:'ArvoRegular';
-	background-color:#0B3470;
+	background:#0B3470 url('../img/homepage-hero.jpg') center no-repeat;
 	color:#FAF000;
 	font-size:4vh;
 }
@@ -76,12 +76,13 @@ table {
 }
 
 th{
-	color:#00D1C6;
+	color:#333;
 }
 
 #announcements{
 	height:100%;
 	overflow: hidden !important;
+	font-size:1.5em;
 }
 
 #announcmentList{

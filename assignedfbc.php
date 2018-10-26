@@ -34,7 +34,7 @@ function callDataAssignedFBC(){
 					//console.log('Assigned FBC: ');
 					var anyOnCue = 0;
 					allAssignedFBC = qdb_data;
-					var titleBar = '<h2 class="display-5">ASSIGNED FBCs</h2>';
+					var titleBar = '<h2 class="display-5">FBCs Due Today</h2>';
 					var totalContent = "";
 					document.getElementById('AssFBCtableContent').innerHTML = "";
 					var team = "";
